@@ -46,5 +46,10 @@ Combined_data <- cbind(Subjects, tempx, Activity)
 ##2. Extracting only the measurements on the mean and standard deviation for each measurement
 
 ```{r} 
-filtered_data <- select(Combined_data, contains("Subjects"),                                     contains("mean"), contains("std"), contains("Activity"),  -contains("meanFreq"), -contains("angle"))
+filtered_data <- select(Combined_data, 
+contains("Subjects"),                                     contains("mean"), 
+contains("std"), 
+contains("Activity"),  
+-contains("meanFreq"), 
+-contains("angle"))
 ```
