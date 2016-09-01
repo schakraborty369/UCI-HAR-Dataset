@@ -47,9 +47,47 @@ Combined_data <- cbind(Subjects, tempx, Activity)
 
 ```{r} 
 filtered_data <- select(Combined_data, 
-contains("Subjects"),                                     contains("mean"), 
-contains("std"), 
-contains("Activity"),  
--contains("meanFreq"), 
+contains("Subjects"),
+contains("mean"),
+contains("std"),
+contains("Activity"),
+-contains("meanFreq"),
 -contains("angle"))
 ```
+
+##3. Using descriptive activity names to name the activities in the data set
+
+```{r} 
+Activity <- read.table("activity_labels.txt", col.names = c("Activity_Labels", "Activity"))
+for (i in Activity[,1])  
+{filtered_data$Activity[filtered_data$Activity == i] <- as.character(Activity[i,2])}
+```
+
+##4. Appropriate labelling of the data set with descriptive variable names
+
+```{r} 
+names(filtered_data) <- gsub("std","stDev",names(filtered_data))
+names(filtered_data) <- gsub("BodyBody","Body_",names(filtered_data))
+names(filtered_data) <- gsub("^f","Frequency_",names(filtered_data))
+names(filtered_data) <- gsub("^t","Time_",names(filtered_data))
+names(filtered_data) <- gsub("Acc","Acceleration_",names(filtered_data))
+names(filtered_data) <- gsub("Gyro","Gyroscope_",names(filtered_data))
+names(filtered_data) <- gsub("-","",names(filtered_data))
+names(filtered_data) <- gsub("Jerk","Jerk_",names(filtered_data))
+names(filtered_data) <- gsub("Mag","Magnitude_",names(filtered_data))
+names(filtered_data) <- gsub("gravityMean","Gravity_Mean",names(filtered_data))
+names(filtered_data) <- gsub("Body","Body_",names(filtered_data))
+names(filtered_data) <- gsub("\\()", "-", as.character(names(filtered_data)))
+names(filtered_data) <- gsub("-$", "", as.character(names(filtered_data)))
+names(filtered_data) <- gsub("Gravity", "Gravity_", as.character(names(filtered_data)))
+names(filtered_data) <- gsub("__", "_", as.character(names(filtered_data)))
+```
+
+##5. Creating a secondary independent tidy data set with the average of each variable for each activity and each subject
+
+```{r} 
+new_data <- group_by(filtered_data, Subjects, Activity)
+secondary_data <- summarise_each(new_data,funs(mean))
+```
+
+
