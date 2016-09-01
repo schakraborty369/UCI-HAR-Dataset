@@ -90,4 +90,8 @@ new_data <- group_by(filtered_data, Subjects, Activity)
 secondary_data <- summarise_each(new_data,funs(mean))
 ```
 
+##6. Saved both filtered data and secondary tidy data
+
+write.table(filtered_data, file="filtered_data.txt", row.name=FALSE)
+write.table(secondary_data, file="secondary_data.txt", row.name=FALSE)
 
