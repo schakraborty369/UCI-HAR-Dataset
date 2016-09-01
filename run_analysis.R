@@ -1,5 +1,4 @@
-setwd("C:/Users/Sony/Documents/GitHub/UCI-HAR-Dataset")
-library(plyr)
+library(dplyr)
 rm(list=ls())
 
 #==============================================================================================================
