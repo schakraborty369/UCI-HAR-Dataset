@@ -3,6 +3,7 @@ Total 68 variables are there with 10299 observations. i.e. the tiny data is of d
 
 ##ID of the persons (subjects) on whom experiments were carried out
 * Subjects
+
 ##Time measurements on mean
 * Time_Body_Acceleration_mean* X
 * Time_Body_Acceleration_mean* Y
@@ -24,6 +25,7 @@ Total 68 variables are there with 10299 observations. i.e. the tiny data is of d
 * Time_Body_Acceleration_Jerk_Magnitude_mean
 * Time_Body_Gyroscope_Magnitude_mean
 * Time_Body_Gyroscope_Jerk_Magnitude_mean
+
 ##Frequency measurements on mean
 * Frequency_Body_Acceleration_mean* X
 * Frequency_Body_Acceleration_mean* Y
@@ -38,6 +40,7 @@ Total 68 variables are there with 10299 observations. i.e. the tiny data is of d
 * Frequency_Body_Acceleration_Jerk_Magnitude_mean
 * Frequency_Body_Gyroscope_Magnitude_mean
 * Frequency_Body_Gyroscope_Jerk_Magnitude_mean
+
 ##Time measurements on standards deviation
 * Time_Body_Acceleration_stDev* X
 * Time_Body_Acceleration_stDev* Y
@@ -59,7 +62,9 @@ Total 68 variables are there with 10299 observations. i.e. the tiny data is of d
 * Time_Body_Acceleration_Jerk_Magnitude_stDev
 * Time_Body_Gyroscope_Magnitude_stDev
 * Time_Body_Gyroscope_Jerk_Magnitude_stDev
+
 ##Frequency measurement on standard deviation
 * Frequency_Body_Acceleration_stDev-X
+
 ##Activities (total 6 units viz. LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS)
 * Activity
